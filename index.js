@@ -21,9 +21,11 @@ app.use("/Reservation",reservationRouter);
 app.use("/Command", commandeRouter);
 app.use("/Quantity", quantityRouter);
 
+const port = Process.env.PORT || 3000;
+
 db.sequelize.sync().then(() => {
-app.listen(3001, () => {
-    console.log("server running on port 3001");
+app.listen(port, () => {
+    console.log("server running on port "+port);
 });
 });
 
